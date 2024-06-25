@@ -1,3 +1,1 @@
-# Основы современного web-программирования
-
-## foundations-modern-web
+# js-course-from-scratch
