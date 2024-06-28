@@ -124,4 +124,3 @@ function countChessboardGrains(numCells) {
 const numCells = 64; // Всего 64 клетки на шахматной доске
 const totalGrains = countChessboardGrains(numCells);
 console.log(`Общее количество зёрен на шахматной доске из ${numCells} клеток: ${totalGrains}`);
-git
