@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Эмуляция выбора услуг при покупке телефона</title>
+  <style>
+      body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #af4f4f;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+      }
+      .container {
+          width: 90%;
+          max-width: 600px;
+          background-color: #ffffff;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          text-align: center;
+      }
+      h1 {
+          color: #333333;
+          margin-bottom: 20px;
+      }
+      label {
+          font-size: 18px;
+          display: block;
+          margin-bottom: 8px;
+          text-align: left;
+          color: #555555;
+      }
+      select, input[type="checkbox"], button {
+          width: calc(100% - 22px); /* Adjusted width for better alignment */
+          padding: 10px;
+          font-size: 16px;
+          margin-bottom: 15px;
+          border: 1px solid #dddddd;
+          border-radius: 4px;
+          box-sizing: border-box;
+          background-color: #f9f9f9; /* Lighter background */
+      }
+      input[type="checkbox"] {
+          display: inline-block;
+          margin-right: 10px;
+      }
+      button {
+          background-color: #4CAF50;
+          color: #ffffff;
+          border: none;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          padding: 12px;
+          font-size: 18px;
+          border-radius: 4px;
+      }
+      button:hover {
+          background-color: #45a049;
+      }
+      #result {
+          margin-top: 20px;
+          font-size: 18px;
+          padding: 10px;
+          border: 1px solid #dddddd;
+          border-radius: 4px;
+          background-color: #ffffff;
+          text-align: left;
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Логические выражения</h1>
+  <h3>Эмуляция выбора услуг при покупке телефона</h3>
+
+  <label for="phoneModel">Модель телефона:</label>
+  <select id="phoneModel">
+    <option value="">Выберите модель</option>
+    <option value="iPhone12">iPhone 12</option>
+    <option value="SamsungS21">Samsung Galaxy S21</option>
+    <option value="Pixel5">Google Pixel 5</option>
+  </select>
+
+  <br>
+
+  <label for="insuranceOption">
+    <input type="checkbox" id="insuranceOption"> Добавить страховку
+  </label>
+
+  <br>
+
+  <label for="accessoriesOption">
+    <input type="checkbox" id="accessoriesOption"> Добавить аксессуары
+  </label>
+
+  <br>
+
+  <button id="confirmButton">Подтвердить покупку</button>
+
+  <div id="result"></div>
+</div>
+
+<script>
+  document.getElementById('confirmButton').addEventListener('click', function() {
+    const phoneModel = document.getElementById('phoneModel').value;
+    const insuranceCheckbox = document.getElementById('insuranceOption').checked;
+    const accessoriesCheckbox = document.getElementById('accessoriesOption').checked;
+    const resultElement = document.getElementById('result');
+
+    if (phoneModel === '') {
+      resultElement.innerHTML = '<p style="color: red;">Пожалуйста, выберите модель телефона.</p>';
+      return;
+    }
+
+    let purchaseDetails = `<p><strong>Вы купили:</strong> ${phoneModel}.</p>`;
+    purchaseDetails += `<p><strong>Добавлено страховки:</strong> ${insuranceCheckbox ? 'Да' : 'Нет'}.</p>`;
+    purchaseDetails += `<p><strong>Добавлены аксессуары:</strong> ${accessoriesCheckbox ? 'Да' : 'Нет'}.</p>`;
+
+    resultElement.innerHTML = purchaseDetails;
+  });
+</script>
+</body>
+</html>
