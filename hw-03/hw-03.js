@@ -1,10 +1,10 @@
 // 1 Приветствие по имени
 function helloName(name) {
-  console.log(`Hello ${name}`);
+ return `Hello ${name}`; 
 }
-helloName("Mariia");
-helloName("Anna");
-helloName("Den");
+console.log(helloName("Mariia"));
+console.log(helloName("Anna"));
+console.log(helloName("Den"));
 
 // 2 Вставка слова в строку
 function makeOutWord(srt, word) {
@@ -73,3 +73,4 @@ function lastChars(a, b) {
 }
 lastChars("res", "tab");
 lastChars("", "tab");
+
