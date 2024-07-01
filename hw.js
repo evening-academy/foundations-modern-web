@@ -48,3 +48,16 @@ function theEnd(str, front) {
 
 console.log(theEnd("nonStart", true));
 console.log(theEnd("nonStart", false));
+
+function endsLy(str, front) {
+    if (front) {
+        // Если front равен true, вернуть первый символ строки
+        return str[0];
+    } else {
+        // Иначе вернуть последний символ строки
+        return str[str.length - 1];
+    }
+}
+
+console.log(endsLy("Star", true));
+console.log(endsLy("Startly", false));
