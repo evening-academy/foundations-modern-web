@@ -22,7 +22,9 @@
    родителей.
    ```
    verySmartDepositBoxVersionThree(mamaPermission, papaPermission, omaPermission)
+   return mamaPermission && papaPermission || omaPermission
    ```
+
 
 4. Родители Василия добились успехов в программировании и смогли передать свои знания сыну. Василий вырос и
    запрограммировал систему аварийного уничтожения первых космических кораблей земли, улетевших в Альфа-Центавру.
@@ -40,6 +42,7 @@
    doorbell(true, true) -> false
    doorbell(false, false) -> false
    doorbell(true, false) -> true
+   a ^ b
    ```
 
 6. Программирование всё больше захватывало семью Василия и они решили сделать полностью умный дом. Для начала они решили
